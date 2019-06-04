@@ -1,26 +1,71 @@
-// These variables will hold the questions.
-var questions = ["How many days are in a year", "How old is earth", "How much is 100 euros in US currency", "How many pennies are in a million dollars"];
+var myQuestions = [
+    {
+        question: "How many days are in a year?",
+        anwsers:{
+            a: '365',
+            b: '364',
+            c: '366',
+            d: '370',
+        },
+        correctAnwser = 'a'
+    },
+    {
+        question: "how old is earth",
+        anwsers:{
+            a: "1.5 billions years",
+            b: "4.543 billion years",
+            c: "8.723 billion years",
+            d: "5.664 billion years",
+        },
+        correctAnwser = 'a'
+    },
+    {
+        question: "Whats the hottest planet in our solar system?",
+        anwsers:{
+            a: "Neptune",
+            b: "Mars",
+            c: "Venus",
+            d: "Mercury",
+        },
+        correctAnwser = "c"
+    },
+    {
+        question: "How much does a full nasa space suit cost?",
+        anwsers:{
+            a: "1,000,000 dollars!",
+            b: "12,000,000 dollars!",
+            c: "10,000,000 dollars!",
+            d: " 200,000 dollars!",
+        },
+        correctAnwser = "b",
+    }
+];
 
-// This is where the randomly generated questions will go 
-var chosenQuestion = "";
+function showQuestions(questions, quizContainer){
+     
+    var output = [];
+    var anwsers;
 
-// these variables will hold the multiple choice anwsers for the questions
-var anwsers1 = "";
-var anwsers2 = "";
-var anwsers3 = "";
-var anwsers4 = "";
+    for(var i =0; i<questions.length; i++){
+        
+        anwsers = [];
 
-// This variable will hold the anwser you've chosen.
-var chosenAnwser = "";
+        for (letter in questions[i].anwsers){
 
-// This variable will hold the number of wrong guesses
-var wrongGuessCounter = 0;
-
-//This variable will hold the number of right guesses
-var rightGuessCounter = 0;
-
-// This is the timer variable
-var timer = 30;
+            anwsers.push(
+                '<label>' 
+                + '<input type = "radio" name="question'+i+'" value"'+letter+'">'
+                + letter + ': '
+                + questions[i].anwsers[letter]
+                + '</label>'
+            ) 
+        }
+    }
+            output.push(
+                '<div class="question">' + questions[i].question + '</div>'
+                    + '<div class = "anwsers">' + anwsers.join('') + '</div>' 
+            );
+}
 
 
 
