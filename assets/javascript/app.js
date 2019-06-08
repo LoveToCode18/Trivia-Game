@@ -1,72 +1,28 @@
-var myQuestions = [
-    {
-        question: "How many days are in a year?",
-        anwsers:{
-            a: '365',
-            b: '364',
-            c: '366',
-            d: '370',
-        },
-        correctAnwser = 'a'
-    },
-    {
-        question: "how old is earth",
-        anwsers:{
-            a: "1.5 billions years",
-            b: "4.543 billion years",
-            c: "8.723 billion years",
-            d: "5.664 billion years",
-        },
-        correctAnwser = 'a'
-    },
-    {
-        question: "Whats the hottest planet in our solar system?",
-        anwsers:{
-            a: "Neptune",
-            b: "Mars",
-            c: "Venus",
-            d: "Mercury",
-        },
-        correctAnwser = "c"
-    },
-    {
-        question: "How much does a full nasa space suit cost?",
-        anwsers:{
-            a: "1,000,000 dollars!",
-            b: "12,000,000 dollars!",
-            c: "10,000,000 dollars!",
-            d: " 200,000 dollars!",
-        },
-        correctAnwser = "b",
-    }
-];
-
-function showQuestions(questions, quizContainer){
-     
-    var output = [];
-    var anwsers;
-
-    for(var i =0; i<questions.length; i++){
-        
-        anwsers = [];
-
-        for (letter in questions[i].anwsers){
-
-            anwsers.push(
-                '<label>' 
-                + '<input type = "radio" name="question'+i+'" value"'+letter+'">'
-                + letter + ': '
-                + questions[i].anwsers[letter]
-                + '</label>'
-            ) 
-        }
-    }
-            output.push(
-                '<div class="question">' + questions[i].question + '</div>'
-                    + '<div class = "anwsers">' + anwsers.join('') + '</div>' 
-            );
-}
-
-
-
-
+(function() {
+    var questions = [{
+      question: "What is 2*5?",
+      choices: [2, 5, 10, 15, 20],
+      correctAnswer: 2
+    }, {
+      question: "What is 3*6?",
+      choices: [3, 6, 9, 12, 18],
+      correctAnswer: 4
+    }, {
+      question: "What is 8*9?",
+      choices: [72, 99, 108, 134, 156],
+      correctAnswer: 0
+    }, {
+      question: "What is 1*7?",
+      choices: [4, 5, 6, 7, 8],
+      correctAnswer: 3
+    }, {
+      question: "What is 8*8?",
+      choices: [20, 30, 40, 50, 64],
+      correctAnswer: 4
+    }];
+    
+    var questionCounter = 0; //Tracks question number
+    var selections = []; //Array containing user choices
+    var quiz = $('#quiz'); //Quiz div object
+    
+});
