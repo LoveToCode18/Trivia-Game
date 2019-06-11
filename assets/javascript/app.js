@@ -25,4 +25,25 @@
     var selections = []; //Array containing user choices
     var quiz = $('#quiz'); //Quiz div object
     
+    // Display initial question
+    displayNext();
+
+    // Click handler for the 'next' button
+    $('#next').on('click', function (e) {
+    e.preventDefault();
+  
+    // Suspend click listener during fade animation
+    if(quiz.is(':animated')) {        
+    return false;
+    }
+    choose();
+  
+    // If no user selection, progress is stopped
+    if (isNaN(selections[questionCounter])) {
+        alert('Please make a selection!');
+    } else {
+        questionCounter++;
+        displayNext();
+  }
 });
+
